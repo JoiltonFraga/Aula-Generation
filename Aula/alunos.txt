@@ -1,0 +1,38 @@
+create database db_escola
+
+use db_escola
+
+create table tb_alunos (
+
+id bigint(4) auto_increment,
+nome varchar (60) not null,
+idade bigint (2),
+genero varchar (20) not null,
+nota decimal(2,2)
+
+primary key (id)
+);
+
+select * from tb_alunos
+
+insert into tb_produtos (nome,idade,genero,nota) values ("Andre Souza",15,"Masculino",7.8);
+insert into tb_produtos (nome,idade,genero,nota) values ("Beatriz Gomes",15,"Feminino",10.0);
+insert into tb_produtos (nome,idade,genero,nota) values ("Renato Andrade",14,"Masculino",4.5);
+insert into tb_produtos (nome,idade,genero,nota) values (Joaquim Neves", 16,"Masculino",7.4);
+insert into tb_produtos (nome,idade,genero,nota) values ("Renata Alves",15,"Feminino",8.4);
+insert into tb_produtos (nome,idade,genero,nota) values ("Geovanna Rodriguez", 16,"Feminino",4.9);
+insert into tb_produtos (nome,idade,genero,nota) values ("Thiago Barbosa", 15,"Masculino",3.9);
+insert into tb_produtos (nome,idade,genero,nota) values ("Wendel Bezzera", 16,"Outro",9.7);
+insert into tb_produtos (nome,idade,genero,nota) values ("Pete Carrol", 15,"Masculino",7.5);
+insert into tb_produtos (nome,idade,genero,nota) values ("Rute Viana", 14,"Outro",6.5);
+insert into tb_produtos (nome,idade,genero,nota) values ("Julia Ferraz",15,"Feminino",3.4);
+insert into tb_produtos (nome,idade,genero,nota) values ("Graciane Rosa", 16,"Outro",2.5);
+insert into tb_produtos (nome,idade,genero,nota) values ("Rashaad Penny", 15,"Masculino",1.5);
+insert into tb_produtos (nome,idade,genero,nota) values ("Wesley Antunes", 14,"Masculino",6.5);
+insert into tb_produtos (nome,idade,genero,nota) values ("Bia Almeida",15,"Feminino",7.8);
+
+select * from tb_funcionarios where salario > 7
+
+select * from tb_funcionarios where salario < 7
+
+update tb_funcionarios set nota = 8.7 where id = 13
