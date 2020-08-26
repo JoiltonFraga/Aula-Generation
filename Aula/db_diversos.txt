@@ -1,0 +1,114 @@
+create database db_diversos
+
+use db_diversos
+
+create table tb_alunos (
+id bigint (4) auto_increment, 
+idade bigint (2), 
+nome varchar (60) not null, 
+curso varchar (40) not null, 
+nota1 decimal (2,2), 
+nota2 decimal (2,2), 
+nota3 decimal (2,2),
+
+primary key (id)
+);
+
+
+select * from tb_alunos
+
+insert into tb_alunos (idade, nome, curso, nota1,nota2,nota3) values (23,"Valeria Campello","Direito","9.80","9.40","10.00");
+insert into tb_alunos (idade, nome, curso, nota1,nota2,nota3) values (23,"Russel Wilson","Educação Física","8.43","4.23","10.0");
+insert into tb_alunos (idade, nome, curso, nota1,nota2,nota3) values (19,"Doug Baldwin","Administração","2.80","9.23","7.60");
+insert into tb_alunos (idade, nome, curso, nota1,nota2,nota3) values (26,"Tom Brady","Educação Física","8.0","6.23","7.0");
+insert into tb_alunos (idade, nome, curso, nota1,nota2,nota3) values (18,"Julia Alves","Educação Física","6.43","10.0","10.0");
+insert into tb_alunos (idade, nome, curso, nota1,nota2,nota3) values (17,"Erica Alves","Economia","8.40","7.23","9.4");
+insert into tb_alunos (idade, nome, curso, nota1,nota2,nota3) values (23,"Julieta Gomes","Jornalismo","6.00","6.00","6.00");
+insert into tb_alunos (idade, nome, curso, nota1,nota2,nota3) values (24,"Chris Carson","Jornalismo","5.00","7.60","6.90");
+insert into tb_alunos (idade, nome, curso, nota1,nota2,nota3) values (20,"Jamal Addams","Educação Física","9.00","9.75","10.0");
+insert into tb_alunos (idade, nome, curso, nota1,nota2,nota3) values (25,"Jadevon Clowney","Educação Física","7.45","6.23","8.0");
+insert into tb_alunos (idade, nome, curso, nota1,nota2,nota3) values (20,"Luka Doncic","Economia","6.43","9.23","8.00");
+insert into tb_alunos (idade, nome, curso, nota1,nota2,nota3) values (23,"Flavia Alessandra","Jornalismo","8.00","5.65","9.70");
+insert into tb_alunos (idade, nome, curso, nota1,nota2,nota3) values (21,"Renata Zurig","Economia","7.53","6.53","7.8");
+insert into tb_alunos (idade, nome, curso, nota1,nota2,nota3) values (17,"Andressa Gomes","Educação Física","7.68","6.87","9.50");
+insert into tb_alunos (idade, nome, curso, nota1,nota2,nota3) values (18,"Maria Antert","Administração","4.50","9.23","7.10");
+
+
+select * from tb_alunos where idade > 18
+select * from tb_alunos where idade < 18
+select * from tb_alunos where idade between 20 and 25
+
+
+
+
+create table tb_petshop (
+id bigint (3) auto_increment,
+peso decimal (10,3),
+espécie varchar (30) not null,
+altura decimal (10,2),
+idade bigint(3),
+consulta bigint (2),
+preço decimal (10,2),
+
+primary key (id)
+);
+
+
+insert into tb_petshop (peso,espécie,altura,idade,consulta,preço) values ("20.125","Cachorro","0.50",3,01,"58.00");
+insert into tb_petshop (peso,espécie,altura,idade,consulta,preço) values ("20.125","Cachorro","0.80",3,01,"58.00");
+insert into tb_petshop (peso,espécie,altura,idade,consulta,preço) values ("5.230","Gato","0.28",2,02,"45.00");
+insert into tb_petshop (peso,espécie,altura,idade,consulta,preço) values ("18.200","Cachorro","0.62",2,02,"70.00");
+insert into tb_petshop (peso,espécie,altura,idade,consulta,preço) values ("29.389","Cachorro","0.69",4,03,"50.00");
+insert into tb_petshop (peso,espécie,altura,idade,consulta,preço) values ("1.100","Cobra","0.05",1,05,"30.00");
+insert into tb_petshop (peso,espécie,altura,idade,consulta,preço) values ("4.680","Coelho","0.30",4,06,"45.00");
+insert into tb_petshop (peso,espécie,altura,idade,consulta,preço) values ("17.500","Cachorro","0.78",3,07,"50.00");
+insert into tb_petshop (peso,espécie,altura,idade,consulta,preço) values ("30.450","Cachorro","1.10",5,08,"58.00");
+insert into tb_petshop (peso,espécie,altura,idade,consulta,preço) values ("3.504","Gato","0.47",2,09,"35.00");
+insert into tb_petshop (peso,espécie,altura,idade,consulta,preço) values ("17.654","Cachorro","0.90",4,10,"90.00");
+insert into tb_petshop (peso,espécie,altura,idade,consulta,preço) values ("16.125","Cachorro","0.84",3,11,"68.00");
+insert into tb_petshop (peso,espécie,altura,idade,consulta,preço) values ("2.365","Gato","0.43",2,12,"38.00");
+insert into tb_petshop (peso,espécie,altura,idade,consulta,preço) values ("7.689","Coelho","0.50",4,13,"40.00");
+insert into tb_petshop (peso,espécie,altura,idade,consulta,preço) values ("35.256","Cachorro","1.20",5,14,"90.00");
+
+
+select * from tb_petshop where peso > 10
+select * from tb_petshop where peso < 10
+select * from tb_petshop where peso between 10 and 30
+
+
+
+create table tb_varejo(
+id bigint(4) auto_increment,
+produto varchar(30) not null,
+preço decimal (10,2),
+quantidade bigint (3),
+categoria varchar (30) not null,
+peso decimal (10,2),
+disponível boolean,
+
+primary key (id)
+);
+
+insert into tb_varejo (produto,preço,quantidade,categoria,peso,disponível) values ("Sofá","899.99",25,"sala","13.250",true);
+insert into tb_varejo (produto,preço,quantidade,categoria,peso,disponível) values ("Sofá","899.99",25,"sala","13.250",true);
+insert into tb_varejo (produto,preço,quantidade,categoria,peso,disponível) values ("Mesa","499.99",30,"cozinha","10.300",true);
+insert into tb_varejo (produto,preço,quantidade,categoria,peso,disponível) values ("Geladeira","1899.99",35,"cozinha","30.450",true);
+insert into tb_varejo (produto,preço,quantidade,categoria,peso,disponível) values ("Fogão","799.99",10,"cozinha","18.980",true);
+insert into tb_varejo (produto,preço,quantidade,categoria,peso,disponível) values ("Micro-ondas","299.99",40,"cozinha","6.050",true);
+insert into tb_varejo (produto,preço,quantidade,categoria,peso,disponível) values ("Televisão","1499.99",40,"sala","4.080",true);
+insert into tb_varejo (produto,preço,quantidade,categoria,peso,disponível) values ("Cama","799.99",15,"quarto","20.250",true);
+insert into tb_varejo (produto,preço,quantidade,categoria,peso,disponível) values ("Guarda roupa","899.99",30,"quarto","32.098",true);
+insert into tb_varejo (produto,preço,quantidade,categoria,peso,disponível) values ("Rack","199.99",10,"sala","9.250",true);
+insert into tb_varejo (produto,preço,quantidade,categoria,peso,disponível) values ("Cadeira","69.99",45,"cozinha","4.587",true);
+insert into tb_varejo (produto,preço,quantidade,categoria,peso,disponível) values ("Chuveiro","99.99",40,"banheiro","2.150",true);
+insert into tb_varejo (produto,preço,quantidade,categoria,peso,disponível) values ("Espelho","49.99",15,"banheiro","0.450",true);
+insert into tb_varejo (produto,preço,quantidade,categoria,peso,disponível) values ("Lavatório","299.99",10,"banheiro","8.270",true);
+insert into tb_varejo (produto,preço,quantidade,categoria,peso,disponível) values ("Almofadas","9.99",25,"sala","0.158",true);
+
+select * from tb_varejo where  produto like "a%"
+
+select * from tb_varejo  where categoria = "sala"
+
+select * from tb_varejo where preço between 1000 and 1500
+
+select * from tb_varejo where  categoria like "%banheiro%"
