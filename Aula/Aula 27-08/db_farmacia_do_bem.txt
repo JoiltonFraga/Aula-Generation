@@ -1,0 +1,51 @@
+create database db_farmacia_do_bem
+
+use db_farmacia_do_bem
+
+
+create table tb_categoria (
+id bigint (3) auto_increment,
+setor varchar (30),
+disponivel boolean,
+
+primary key (id)
+);
+
+insert into tb_categoria (setor,disponivel) values ("Higiene",true);
+insert into tb_categoria (setor,disponivel) values ("Limpeza",true);
+insert into tb_categoria (setor,disponivel) values ("comprimido",true);
+insert into tb_categoria (setor,disponivel) values ("injeção",true);
+insert into tb_categoria (setor,disponivel) values ("Perfume",true);
+
+create table tb_produtos(
+id bigint(3)auto_increment,
+nome varchar (40) not null,
+preco decimal (10,2),
+quantidade  bigint (3),
+categoria_id bigint (3),
+
+primary key (id),
+foreign key (categoria_id) references tb_categoria(id)
+);
+
+insert into tb_produtos(nome,preco,quantidade,categoria_id) values ("Gel de limpeza",54.90,50,2);
+insert into tb_produtos(nome,preco,quantidade,categoria_id) values ("Apracur",10.00,60,3);
+insert into tb_produtos(nome,preco,quantidade,categoria_id) values ("Dorflex",15.00,65,3);
+insert into tb_produtos(nome,preco,quantidade,categoria_id) values ("Fio dental",20.00,30,1);
+insert into tb_produtos(nome,preco,quantidade,categoria_id) values ("Vitamina C",15.90,20,3);
+insert into tb_produtos(nome,preco,quantidade,categoria_id) values ("Desodorante",19.90,46,5);
+insert into tb_produtos(nome,preco,quantidade,categoria_id) values ("Papel higiênico",14.99,25,1);
+insert into tb_produtos(nome,preco,quantidade,categoria_id) values ("Colgate",5.99,25,1);
+
+select * from tb_produtos where preco > 50
+
+select * from tb_produtos where preco between 3 and 60
+
+select * from tb_produtos where nome like "%b%"
+
+select * from tb_produtos 
+inner join tb_categoria on tb_categoria.id = tb_produtos.categoria_id
+
+select * from tb_produtos 
+inner join tb_categoria on tb_categoria.id = tb_produtos.categoria_id
+where setor = "Higiene"

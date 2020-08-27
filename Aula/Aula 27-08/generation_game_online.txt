@@ -1,0 +1,56 @@
+create database db_generation_game_online
+
+use db_generation_game_online
+
+create table tb_classe (
+
+id bigint (3) auto_increment,
+tipo varchar (30) not null,
+stamina bigint,
+
+primary key (id)
+);
+
+insert into tb_classe (tipo,stamina) values ("Guerreiro",300);
+insert into tb_classe (tipo,stamina) values ("Mago",100);
+insert into tb_classe (tipo,stamina) values ("Tanque",200);
+insert into tb_classe (tipo,stamina) values ("Assassino",250);
+insert into tb_classe (tipo,stamina) values ("Atirador",150);
+
+
+create table tb_personagens (
+
+id bigint (3) auto_increment,
+nome varchar (30) not null,
+ataque bigint,
+defesa bigint,
+classe_id bigint,
+
+primary key (id),
+foreign key(classe_id) references tb_classe(id)
+
+);
+
+insert into tb_personagens (nome,ataque,defesa,classe_id) values ("Ashe",2260,1800,5);
+insert into tb_personagens (nome,ataque,defesa,classe_id) values ("Nasus",1800,2500,3);
+insert into tb_personagens (nome,ataque,defesa,classe_id) values ("Talon",2450,1500,4);
+insert into tb_personagens (nome,ataque,defesa,classe_id) values ("Garen",1900,2300,1);
+insert into tb_personagens (nome,ataque,defesa,classe_id) values ("Malzahar",2200,1800,2);
+insert into tb_personagens (nome,ataque,defesa,classe_id) values ("Lissandra",2250,1700,2);
+insert into tb_personagens (nome,ataque,defesa,classe_id) values ("Miss Fortune",2300,1750,5);
+insert into tb_personagens (nome,ataque,defesa,classe_id) values ("Ashe",2500,1550,4);
+
+
+
+select * from tb_personagens where ataque > 2000
+
+select * from tb_personagens where defesa between 1000 and 2000
+
+select * from tb_personagens where nome like "%c%"
+
+select * from tb_personagens
+inner join tb_classe on tb_classe.id =tb_personagens.classe_id
+
+select * from tb_personagens
+inner join tb_classe on tb_classe.id =tb_personagens.classe_id
+where tipo = "Atirador"
